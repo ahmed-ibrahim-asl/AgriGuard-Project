@@ -1,0 +1,30 @@
+# [Flask]
+#     - Micro frame work
+#     - suitable for light projects
+
+# telling application flask everything you need to run application
+# is in same directory 
+app = Flask(__name__)
+
+
+# when user go to root directory return this
+@app.route('/')
+def index():
+    return "Drink more coffee"
+
+
+'''
+- When do we use json.dump ?
+    1. you need to return structured data as respond to api request
+    2. Save structured data in readable format
+    3. sending data over a network 
+
+
+    [syntax]
+    json.dump(obj, file_obj, indent=None, separators=None)
+
+    - obj:      python object you want to convert to json 
+    - file_obj: where the json will be written to 
+    - indent: adds indentation 
+    - seprator: customize item seprator
+'''

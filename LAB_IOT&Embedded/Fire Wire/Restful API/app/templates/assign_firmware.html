@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Assign Firmware to Device {{ device_id }}</h2>
+<form method="post">
+  <div class="form-group">
+    <label for="firmware_id">Select Firmware:</label>
+    <select class="form-control" name="firmware_id" required>
+      {% for firmware in firmware_list %}
+      <option value="{{ firmware[0] }}">{{ firmware[1] }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Assign Firmware</button>
+</form>
+{% endblock %}
